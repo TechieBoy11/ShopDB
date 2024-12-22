@@ -3,6 +3,7 @@
 // #include <curl/curl.h> 
 
 int main() {
+    // Handles db save and read in
     std::cout << "Hello, welcome to the recipe database!" << std::endl;
     std::cout << "Would you like to use the defult file 'recipes.csv'? (y/n): ";
     std::string response;
@@ -14,7 +15,11 @@ int main() {
         std::cin >> response;
         fileName = "../../saveFiles/" + response;
     }
+
+    // initializes program handler (this will initilize the database)
     ProgramHandler handler(fileName);
+
+    // main program loop
     while (true) {
         std::cout << "\n////////////////////////////////////////////////////////////////////" << std::endl;
         std::cout << "What would you like to do?" << std::endl;

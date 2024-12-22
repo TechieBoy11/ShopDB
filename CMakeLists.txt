@@ -5,12 +5,6 @@ project(Database)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Set cURL include and library directories manually (if needed)
-set(CURL_INCLUDE_DIR "C:/ProgramData/chocolatey/lib/curl/tools/curl-8.10.1_1-win64-mingw/include")
-set(CURL_LIBRARY "C:/ProgramData/chocolatey/lib/curl/tools/curl-8.10.1_1-win64-mingw/lib/libcurl.a")
-set(ADDITIONAL_LIBS "C:/ProgramData/chocolatey/lib/curl/tools/curl-8.10.1_1-win64-mingw/lib/libssl.a" 
-                    "C:/ProgramData/chocolatey/lib/curl/tools/curl-8.10.1_1-win64-mingw/lib/libcrypto.a")
-
 # Optional strict mode
 if(STRICT)
   message("-- Enabling strict compilation mode")

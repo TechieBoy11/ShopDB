@@ -21,6 +21,7 @@ void ProgramHandler::list() {
     db->printList(recipeList);
 }
 
+// TODO: add remove or edit functionality 
 void ProgramHandler::addRecipe() {
     std::string name;
     std::vector<std::string> ingredients;
@@ -28,6 +29,8 @@ void ProgramHandler::addRecipe() {
 
     std::cout << "Enter the name of the recipe: ";
     std::cin >> name;
+
+    // TODO: check if name is in db already
 
     while (true) {
         std::cout << "Enter the ingredient: ";
