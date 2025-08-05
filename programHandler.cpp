@@ -46,3 +46,52 @@ void ProgramHandler::addRecipe() {
 void ProgramHandler::printRecipes() {
     db->printRecipes();
 }
+
+void ProgramHandler::sendMessage() {
+    // Runs the python script located in the home directory.
+    std::cout << "preparing send" << std::endl;
+    //std::vector<std::string> shoppingList = db->getShoppingList();
+
+    // Asks user for phone number TODO: confirm phone number format
+    std::string phoneNumber{"7138553047"};
+    //std::cout << "What number would you like to send list to: "<< std::endl;
+    //std::cin >> phoneNumber;
+
+    // Build command line: python "scriptPath" phoneNumber
+    std::string cmdLine = "python \"" + scriptPath + "\" " + phoneNumber;
+
+    STARTUPINFO si = { sizeof(si) };
+    PROCESS_INFORMATION pi;
+
+    char cmdLineCStr[512];
+    errno_t err = strncpy_s(cmdLineCStr, sizeof(cmdLineCStr), cmdLine.c_str(), _TRUNCATE);
+    if (err != 0) {
+        std::cerr << "Failed to copy command line string safely\n";
+        return;
+    }
+
+    if (!CreateProcess(
+            nullptr,
+            cmdLineCStr,
+            nullptr,
+            nullptr,
+            FALSE,
+            CREATE_NO_WINDOW,
+            nullptr,
+            nullptr,
+            &si,
+            &pi))
+    {
+        std::cerr << "Failed to launch python script. Error: " << GetLastError() << std::endl;
+        return;
+    }
+
+    // Close handles to avoid waiting for the child process
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
+
+    std::cout << "Text message script launched in background." << std::endl;
+
+
+    
+}

@@ -6,6 +6,8 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <windows.h>
+
 #include "db.h"
 
 class ProgramHandler {
@@ -24,10 +26,14 @@ class ProgramHandler {
         // prints out the list of all recipes currently in the database
         void printRecipes();
 
+        // sends shopping list to phone
+        void sendMessage();
+
 
     private:
     Database* db;
     bool error;
+    std::string scriptPath = "C:\\Users\\17138\\3D Objects\\Fun\\Shopping_Guide\\c++\\ShopDB\\sendMessage.py"; // Path to the Python script
 
 };
 
