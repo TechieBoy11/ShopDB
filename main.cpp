@@ -1,6 +1,6 @@
 #include "programHandler.h"
+
 #include <iostream>
-// #include <curl/curl.h> 
 
 int main() {
     // Handles db save and read in
@@ -40,6 +40,7 @@ int main() {
         }
         switch (choice) {
             case 0:
+                handler.sendMessage(); // Example phone number
                 break;
             case 1:
                 handler.addRecipe();
