@@ -22,4 +22,8 @@ dist/
 .idea/
 
 # Ignore environment files
+<<<<<<< HEAD
 .env
+=======
+.env
+>>>>>>> 7d990daa395c4a160c05db5111061e85abc7ac30
