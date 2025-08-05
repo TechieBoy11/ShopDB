@@ -1,0 +1,10 @@
+^C:\USERS\17138\3D OBJECTS\FUN\SHOPPING_GUIDE\C++\SHOPDB\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/17138/3D Objects/Fun/Shopping_Guide/c++/ShopDB" "-BC:/Users/17138/3D Objects/Fun/Shopping_Guide/c++/ShopDB/build" --check-stamp-file "C:/Users/17138/3D Objects/Fun/Shopping_Guide/c++/ShopDB/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
