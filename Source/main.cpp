@@ -40,13 +40,14 @@ int main() {
         }
         switch (choice) {
             case 0:
+                handler.creatList();
                 handler.sendMessage(); // Example phone number
                 break;
             case 1:
                 handler.addRecipe();
                 break;
             case 2:
-                handler.list();
+                handler.creatList();
                 break;
             case 3:
                 handler.printRecipes();

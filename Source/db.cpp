@@ -34,7 +34,7 @@ void Database::printRecipes() const{
     }
 }
 
-void Database::printList(std::vector<std::string> shoppingList) const {
+std::vector<std::string> Database::printList(std::vector<std::string> shoppingList) const {
     std::vector<std::string> ingredients;
     // collect all ingredients from the recipes
     for (const auto& recipeName : shoppingList) {
@@ -60,11 +60,7 @@ void Database::printList(std::vector<std::string> shoppingList) const {
         }
     }
 
-    // print out a list of ingredients
-    std::cout << "Shopping List:" << std::endl;
-    for (size_t i = 0; i < ingredients.size(); i++) 
-        std::cout << ingredients[i] << std::endl;
-    
+    return ingredients;
 }
         
 void Database::loadDB() {

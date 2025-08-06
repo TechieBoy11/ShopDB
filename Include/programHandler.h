@@ -18,7 +18,7 @@ class ProgramHandler {
         ~ProgramHandler();
 
         // handles reading in list from user and printing it
-        void list();
+        void creatList();
 
         // handles reading in recipe from user and adding it to the database
         void addRecipe();
@@ -33,6 +33,8 @@ class ProgramHandler {
     private:
     Database* db;
     bool error;
+    std::vector<std::string> shoppingList;
+    std::vector<std::string> ingredients; // stores a list of ingredients to be sent to the phone
     std::string scriptPath = "C:\\Users\\17138\\3D Objects\\Fun\\Shopping_Guide\\c++\\ShopDB\\sendMessage.py"; // Path to the Python script
 
 };

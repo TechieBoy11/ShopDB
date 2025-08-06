@@ -8,17 +8,22 @@ ProgramHandler::~ProgramHandler() {
     delete db;
 }
 
-void ProgramHandler::list() {
-    std::vector<std::string> recipeList;
+void ProgramHandler::creatList() {
+    shoppingList.clear();;
     std::string name;
     while (true) {
         std::cout << "Enter the name of the recipe you want to add to the shopping list: ";
         std::cin >> name;
         if (name == "done")
             break;
-        recipeList.push_back(name);
+        shoppingList.push_back(name);
     }
-    db->printList(recipeList);
+    ingredients = db->printList(shoppingList);
+
+    // print out a list of ingredients
+    std::cout << "Shopping List:" << std::endl;
+    for (size_t i = 0; i < ingredients.size(); i++) 
+        std::cout << ingredients[i] << std::endl;
 }
 
 // TODO: add remove or edit functionality 

@@ -23,8 +23,8 @@ class Database {
         //Prints as comma separated list without any space between fields. Fields are separated by comma only. Students are separated by new line.
         void printRecipes() const;
 
-        // prints a list of all ingredients
-        void printList(std::vector<std::string> shoppingList) const;
+        // Getter for ingredients in shopping list
+        std::vector<std::string> printList(std::vector<std::string> shoppingList) const;
 
     private:
         std::string dbName = "students.csv"; // stores the name of the CSV file
