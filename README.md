@@ -2,9 +2,11 @@
 A C++ program for storing recipes and creating a shopping list.
 
 ## Running code
-* CD into ./ShopDB/build/release
+* Create a build directory
+* Compile code in the new build directory
+* CD into ./ShopDB/build/release or debug (depending on compilation style)
 * Run Command db.exe
-*  Recipes will be saved in csv file in saveFiles directory
+*  Recipes will be saved in recipes.csv file located in saveFiles directory (user can create a new save file when prompted at beginning of program) 
 
 ## Compiling code
 * Save all files
