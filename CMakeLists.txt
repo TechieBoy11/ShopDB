@@ -13,10 +13,12 @@ endif()
 
 # Include directories for your project
 include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/Source)
+include_directories(${PROJECT_SOURCE_DIR}/Include)
 
 # Add executables
-add_executable(db main.cpp student.cpp db.cpp programHandler.cpp)
-add_executable(test_exe test/test.cpp student.cpp db.cpp)
+add_executable(db Source/main.cpp Source/db.cpp Source/programHandler.cpp)
+add_executable(test_exe test/test.cpp Source/db.cpp)
 
 # Set C++ standard for the targets (C++17)
 set_property(TARGET db PROPERTY CXX_STANDARD 17)
